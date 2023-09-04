@@ -17,8 +17,17 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val db = DBHelper(this)
+
         sharedPreferences = application.getSharedPreferences("login", Context.MODE_PRIVATE)
+
+        val username = sharedPreferences.getString("username", "")
+        if (username != null) {
+            if (username.isNotEmpty()){
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+        }
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
