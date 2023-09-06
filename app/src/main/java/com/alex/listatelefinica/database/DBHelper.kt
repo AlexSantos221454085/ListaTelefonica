@@ -13,11 +13,10 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
     val sql = arrayOf(
         "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)",
         "INSERT INTO users (username, password) VALUES ('admin','password')",
-        "CREATE TABLE contact (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, phone INT, imageId INT)",
-        "INSERT INTO contact (nome, email, phone, imageId) VALUES ('Maria', 'maria@mail.pt', 911222333,1)",
-        "INSERT INTO contact (nome, email, phone, imageId) VALUES ('João', 'joao@mail.pt', 912345678,2)",
+        "CREATE TABLE contact (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, phone INTEGER, imageId INTEGER)",
+        "INSERT INTO contact (name, email, phone, imageId) VALUES ('Maria', 'maria@mail.pt', 911222333,1)",
+        "INSERT INTO contact (name, email, phone, imageId) VALUES ('Joao', 'joao@mail.pt', 912345678,2)",
     )
-
     override fun onCreate(db: SQLiteDatabase) {
         sql.forEach {
             db.execSQL(it)
@@ -160,11 +159,11 @@ ________________________________________________________________________________
         return contactModel
     }
 
-    fun getAllContact(id: Int): List<ContactModel> {
-        val db = this.writableDatabase
+    fun getAllContact(): ArrayList<ContactModel> {
+        val db = this.readableDatabase
         val c = db.rawQuery("SELECT * FROM contact", null)
 
-        var listaContactModel = ArrayList<ContactModel>()
+        var listContactModel = ArrayList<ContactModel>()
 
         if (c.count > 0) {
             c.moveToFirst()
@@ -181,10 +180,10 @@ ________________________________________________________________________________
                     phone = c.getInt(phoneIndex),
                     imageId = c.getInt(imageIdIndex)
                 )
-                listaContactModel.add(contactModel)
+                listContactModel.add(contactModel)
             } while (c.moveToNext())
         }
         db.close()
-        return listaContactModel
+        return listContactModel
     }
 }
