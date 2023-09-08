@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
                 .show()*/
             val intent = Intent(applicationContext, ContactDetailMainActivity::class.java)
             intent.putExtra("id", contactList[position].id)
-            startActivity(intent)
+            //startActivity(intent)
+            result.launch(intent)
         }
 
         binding.btnAdd.setOnClickListener {

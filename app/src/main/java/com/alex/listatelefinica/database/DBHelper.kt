@@ -14,8 +14,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
         "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)",
         "INSERT INTO users (username, password) VALUES ('admin','password')",
         "CREATE TABLE contact (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, address TEXT, email TEXT, phone INTEGER, imageId INTEGER)",
-        "INSERT INTO contact (name, address, email, phone, imageId) VALUES ('Maria','address Maria', 'maria@mail.pt', 911222333,1)",
-        "INSERT INTO contact (name, address, email, phone, imageId) VALUES ('Joao','address Joao', 'joao@mail.pt', 912345678,2)",
+        "INSERT INTO contact (name, address, email, phone, imageId) VALUES ('Maria','address Maria', 'maria@mail.pt', 911222333,-1)",
+        "INSERT INTO contact (name, address, email, phone, imageId) VALUES ('Joao','address Joao', 'joao@mail.pt', 912345678,-1)",
     )
     override fun onCreate(db: SQLiteDatabase) {
         sql.forEach {
@@ -145,6 +145,7 @@ ________________________________________________________________________________
             c.moveToFirst()
             val idIndex = c.getColumnIndex("id")
             val nameIndex = c.getColumnIndex("name")
+            val addressIndex = c.getColumnIndex("address")
             val emailIndex = c.getColumnIndex("email")
             val phoneIndex = c.getColumnIndex("phone")
             val imageIdIndex = c.getColumnIndex("imageId")
@@ -152,6 +153,7 @@ ________________________________________________________________________________
             contactModel = ContactModel(
                 id = c.getInt(idIndex),
                 name = c.getString(nameIndex),
+                address = c.getString(addressIndex),
                 email = c.getString(emailIndex),
                 phone = c.getInt(phoneIndex),
                 imageId = c.getInt(imageIdIndex)
@@ -171,6 +173,7 @@ ________________________________________________________________________________
             c.moveToFirst()
             val idIndex = c.getColumnIndex("id")
             val nameIndex = c.getColumnIndex("name")
+            val addressIndex = c.getColumnIndex("address")
             val emailIndex = c.getColumnIndex("email")
             val phoneIndex = c.getColumnIndex("phone")
             val imageIdIndex = c.getColumnIndex("imageId")
@@ -178,6 +181,7 @@ ________________________________________________________________________________
                 val contactModel = ContactModel(
                     id = c.getInt(idIndex),
                     name = c.getString(nameIndex),
+                    address = c.getString(addressIndex),
                     email = c.getString(emailIndex),
                     phone = c.getInt(phoneIndex),
                     imageId = c.getInt(imageIdIndex)
