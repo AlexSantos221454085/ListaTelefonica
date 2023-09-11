@@ -30,9 +30,9 @@ class NewContactActivity : AppCompatActivity() {
             val email = binding.editEmail.text.toString()
             val phone = binding.editPhone.text.toString().toInt()
             var imageId = -1
-            if (id != null){
+            if (id != null) {
                 imageId = id as Int
-                }
+            }
             if (name.isNotEmpty() && address.isNotEmpty() && email.isNotEmpty()) {
                 val res = db.insertContact(name, address, email, phone, imageId)
                 if (res > 0) {
@@ -50,7 +50,7 @@ class NewContactActivity : AppCompatActivity() {
             finish()
         }
 
-         binding.imageContact.setOnClickListener {
+        binding.imageContact.setOnClickListener {
             launcher.launch(Intent(applicationContext, ContactImageSelectionActivity::class.java))
 
         }

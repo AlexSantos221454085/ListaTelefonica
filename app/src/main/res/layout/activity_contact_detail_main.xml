@@ -20,10 +20,12 @@
         android:layout_height="100dp"
         android:layout_marginVertical="10dp"
         android:src="@drawable/profiledefuault" />
+
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:gravity="center"
         android:hint="Nome" />
 
@@ -31,53 +33,117 @@
         android:id="@+id/edit_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:gravity="center"
         android:hint="Address" />
-
-    <EditText
-        android:id="@+id/edit_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/edit_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="Phone"
-        android:inputType="phone" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:enabled="false"
+            android:gravity="center"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <ImageView
+            android:id="@+id/image_email"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_email_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:enabled="false"
+            android:gravity="center"
+            android:hint="Phone"
+            android:inputType="phone" />
+
+
+        <ImageView
+            android:id="@+id/image_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_phone_24" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:text="Edit" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/cancel"
+            android:text="Back" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_edit_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
         <Button
             android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
             android:text="Save" />
 
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
-            android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/cancel"
             android:text="Cancel" />
 
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/delete"
             android:text="Delete" />
 
     </LinearLayout>

@@ -13,7 +13,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
     val sql = arrayOf(
         "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)",
         "INSERT INTO users (username, password) VALUES ('admin','password')",
-        "CREATE TABLE contact (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, address TEXT, email TEXT, phone INTEGER, imageId INTEGER)",
+        "CREATE TABLE contact (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, address TEXT, email TEXT, phone INTEGER, imageId INT)",
         "INSERT INTO contact (name, address, email, phone, imageId) VALUES ('Maria','address Maria', 'maria@mail.pt', 911222333,-1)",
         "INSERT INTO contact (name, address, email, phone, imageId) VALUES ('Joao','address Joao', 'joao@mail.pt', 912345678,-1)",
     )
