@@ -17,12 +17,12 @@ import com.alex.listatelefinica.databinding.ActivityContactDetailMainBinding
 import com.alex.listatelefinica.modelo.ContactModel
 
 
-class ContactDetailMainActivity : AppCompatActivity() {
+class ContactDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityContactDetailMainBinding
     private lateinit var db: DBHelper
     private lateinit var launcher: ActivityResultLauncher<Intent>
-    private var imageId: Int? = -1
+    private var imageId: Int = -1
     private var contactModel = ContactModel()
     private val REQUEST_PHONE_CALL = 1
 
@@ -51,7 +51,7 @@ class ContactDetailMainActivity : AppCompatActivity() {
 
             try {
                 startActivity(Intent.createChooser(emailIntent, "Choose Email Client..."))
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Toast.makeText(applicationContext, e.message, Toast.LENGTH_SHORT).show()
             }
         }
@@ -98,7 +98,7 @@ class ContactDetailMainActivity : AppCompatActivity() {
                 address = binding.editAddress.text.toString(),
                 email = binding.editEmail.text.toString(),
                 phone = binding.editPhone.text.toString().toInt(),
-                imageId = contactModel.imageId
+                imageId = imageId
             )
 
             if (res > 0) {
@@ -125,14 +125,23 @@ class ContactDetailMainActivity : AppCompatActivity() {
             }
         }
         binding.imageContact.setOnClickListener {
-            launcher.launch(Intent(applicationContext, ContactImageSelectionActivity::class.java))
+           if ( binding.editName.isEnabled) {
+               launcher.launch(
+                   Intent(
+                       applicationContext,
+                       ContactImageSelectionActivity::class.java
+                   )
+               )
+           }
 
         }
 
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.data != null && it.resultCode == 1) {
-                imageId = it.data?.extras?.getInt("id")
-                binding.imageContact.setImageDrawable(resources.getDrawable(imageId!!))
+                if (it.data?.extras!=null){
+                    imageId = it.data?.getIntExtra("id", 0)!!
+                    binding.imageContact.setImageResource(imageId!!)
+                }
             } else {
                 imageId = -1
                 binding.imageContact.setImageResource(R.drawable.profiledefuault)
@@ -149,14 +158,12 @@ class ContactDetailMainActivity : AppCompatActivity() {
     }
 
     private fun populate() {
-
-
         binding.editName.setText(contactModel.name)
         binding.editAddress.setText(contactModel.address)
         binding.editEmail.setText(contactModel.email)
         binding.editPhone.setText(contactModel.phone.toString())
         if (contactModel.imageId > 0) {
-            binding.imageContact.setImageDrawable(resources.getDrawable(contactModel.imageId))
+            binding.imageContact.setImageResource(contactModel.imageId)
         } else {
             binding.imageContact.setImageResource(R.drawable.profiledefuault)
         }

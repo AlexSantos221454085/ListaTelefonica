@@ -6,12 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_add"
+        android:layout_alignParentTop="true" />
+
+    <!--ListView
         android:id="@+id/list_view_contacts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btn_add"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true"/-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_order"
@@ -22,13 +29,13 @@
         android:src="@drawable/baseline_arrow_downward_24" />
 
     <Button
+        android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:text="@string/logout"
-        android:id="@+id/btn_logout"/>
+        android:text="@string/logout" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_add"

@@ -40,7 +40,7 @@
             android:gravity="center"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:text="password" />
+            android:text="Senha" />
 
         <CheckBox
             android:id="@+id/checkbox_logged"

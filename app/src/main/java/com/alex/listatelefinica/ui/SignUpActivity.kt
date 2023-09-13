@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import com.alex.listatelefinica.R
 import com.alex.listatelefinica.database.DBHelper
-import com.alex.listatelefinica.databinding.ActivityLoginBinding
 import com.alex.listatelefinica.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {

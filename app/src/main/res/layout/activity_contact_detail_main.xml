@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.ContactDetailMainActivity">
+    tools:context=".ui.ContactDetailActivity">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Contact Details"
+        android:text="@string/contact_details"
         android:textSize="30sp" />
 
     <ImageView
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:enabled="false"
         android:gravity="center"
-        android:hint="Address" />
+        android:hint="Endereço" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
             android:layout_weight="6"
             android:enabled="false"
             android:gravity="center"
-            android:hint="Phone"
+            android:hint="Fone"
             android:inputType="phone" />
 
 
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
-            android:text="Edit" />
+            android:text="Editar" />
 
         <Button
             android:id="@+id/btn_back"
@@ -108,7 +108,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/cancel"
-            android:text="Back" />
+            android:text="Voltar" />
 
     </LinearLayout>
 
@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
-            android:text="Save" />
+            android:text="Salvar" />
 
 
         <Button
@@ -135,7 +135,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/cancel"
-            android:text="Cancel" />
+            android:text="Cancelar" />
 
         <Button
             android:id="@+id/btn_delete"
@@ -144,7 +144,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/delete"
-            android:text="Delete" />
+            android:text="Excluir" />
 
     </LinearLayout>
 

@@ -26,7 +26,7 @@
             android:name=".ui.NewContactActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ContactDetailMainActivity"
+            android:name=".ui.ContactDetailActivity"
             android:exported="false" />
         <activity
             android:name=".ui.SignUpActivity"

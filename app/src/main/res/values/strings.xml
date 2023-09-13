@@ -1,17 +1,18 @@
 <resources>
-    <string name="app_name">PhoneList</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="keep_me_logged">Keep me logged</string>
-    <string name="login">Login</string>
-    <string name="don_t_have_account_sign_up">Don\'t have account? Sign up!</string>
-    <string name="recover_your_password">Recover your password</string>
-    <string name="confirm_password">Confirm password</string>
-    <string name="signup">Signup</string>
-    <string name="passwords_dont_t_match">Passwords dont\'t match</string>
-    <string name="please_insert_all_required_fileds">Please insert all required fileds</string>
+    <string name="app_name">Lista Telefônica</string>
+    <string name="username">Nome de Usuário</string>
+    <string name="password">Senha</string>
+    <string name="keep_me_logged">Mantenha-me conectado</string>
+    <string name="login">Entrar</string>
+    <string name="don_t_have_account_sign_up">Não tem conta? Inscrever-se!</string>
+    <string name="recover_your_password">Recupere sua senha</string>
+    <string name="confirm_password">Confirme a senha</string>
+    <string name="signup">Cadastrar</string>
+    <string name="passwords_dont_t_match">As senhas não coincidem</string>
+    <string name="please_insert_all_required_fileds">Por favor insira todos os campos obrigatórios</string>
     <string name="signup_ok">Signup ok</string>
-    <string name="signup_error">Signup error</string>
-    <string name="login_error">Login error</string>
-    <string name="logout">Logout</string>
+    <string name="signup_error">Erro ao inscrever-se</string>
+    <string name="login_error">Erro de login</string>
+    <string name="logout">Sair</string>
+    <string name="contact_details">Detalhes do Contato</string>
 </resources>

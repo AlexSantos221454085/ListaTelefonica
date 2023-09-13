@@ -7,11 +7,11 @@
     android:orientation="vertical"
     tools:context=".ui.NewContactActivity">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="New Contact"
+        android:text="Novo Contato"
         android:textSize="30sp" />
 
     <ImageView
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Address" />
+        android:hint="Endereço" />
 
     <EditText
         android:id="@+id/edit_email"
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Phone"
+        android:hint="Fone"
         android:inputType="phone" />
 
     <LinearLayout
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
-            android:text="Save" />
+            android:text="Salvar" />
 
         <Button
             android:id="@+id/btn_cancel"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
-            android:text="Cancel" />
+            android:text="Cancelar" />
 
     </LinearLayout>
 
