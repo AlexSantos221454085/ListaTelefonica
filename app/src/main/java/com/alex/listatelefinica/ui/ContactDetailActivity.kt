@@ -16,7 +16,6 @@ import com.alex.listatelefinica.database.DBHelper
 import com.alex.listatelefinica.databinding.ActivityContactDetailMainBinding
 import com.alex.listatelefinica.modelo.ContactModel
 
-
 class ContactDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityContactDetailMainBinding
@@ -84,20 +83,20 @@ class ContactDetailActivity : AppCompatActivity() {
             changeEditText(true)
         }
 
-
         binding.btnCancel.setOnClickListener {
             binding.layoutEditDelete.visibility = View.GONE
             binding.layoutEdit.visibility = View.VISIBLE
             populate()
             changeEditText(false)
         }
+
         binding.btnSave.setOnClickListener {
             val res = db.updateContact(
                 id = contactModel.id,
                 name = binding.editName.text.toString(),
                 address = binding.editAddress.text.toString(),
                 email = binding.editEmail.text.toString(),
-                phone = binding.editPhone.text.toString().toInt(),
+                phone = binding.editPhone.text.toString(),
                 imageId = imageId
             )
 
@@ -111,8 +110,8 @@ class ContactDetailActivity : AppCompatActivity() {
                 finish()
             }
         }
-        binding.btnDelete.setOnClickListener {
 
+        binding.btnDelete.setOnClickListener {
             val res = db.deleteContact(contactModel.id)
             if (res > 0) {
                 Toast.makeText(applicationContext, "Delete Ok", Toast.LENGTH_SHORT).show()
@@ -124,21 +123,21 @@ class ContactDetailActivity : AppCompatActivity() {
                 finish()
             }
         }
-        binding.imageContact.setOnClickListener {
-           if ( binding.editName.isEnabled) {
-               launcher.launch(
-                   Intent(
-                       applicationContext,
-                       ContactImageSelectionActivity::class.java
-                   )
-               )
-           }
 
+        binding.imageContact.setOnClickListener {
+            if (binding.editName.isEnabled) {
+                launcher.launch(
+                    Intent(
+                        applicationContext,
+                        ContactImageSelectionActivity::class.java
+                    )
+                )
+            }
         }
 
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.data != null && it.resultCode == 1) {
-                if (it.data?.extras!=null){
+                if (it.data?.extras != null) {
                     imageId = it.data?.getIntExtra("id", 0)!!
                     binding.imageContact.setImageResource(imageId!!)
                 }
@@ -147,7 +146,6 @@ class ContactDetailActivity : AppCompatActivity() {
                 binding.imageContact.setImageResource(R.drawable.profiledefuault)
             }
         }
-
     }
 
     private fun changeEditText(status: Boolean) {
@@ -167,6 +165,5 @@ class ContactDetailActivity : AppCompatActivity() {
         } else {
             binding.imageContact.setImageResource(R.drawable.profiledefuault)
         }
-
     }
 }

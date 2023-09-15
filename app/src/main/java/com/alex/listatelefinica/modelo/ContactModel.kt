@@ -5,7 +5,7 @@ data class ContactModel(
     val name: String = "",
     val address: String = "",
     val email: String = "",
-    val phone: Int = 0,
+    val phone: String = "",
     val imageId: Int = 0,
 )
 
