@@ -25,21 +25,27 @@
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rect_et_name"
         android:gravity="center"
         android:hint="Nome" />
 
     <EditText
         android:id="@+id/edit_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rect_et_name"
         android:gravity="center"
         android:hint="Endereço" />
 
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rect_et_name"
         android:gravity="center"
         android:hint="Email"
         android:inputType="textEmailAddress" />
@@ -47,7 +53,9 @@
     <EditText
         android:id="@+id/edit_phone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rect_et_name"
         android:gravity="center"
         android:hint="Fone"
         android:inputType="phone" />
